@@ -11,17 +11,17 @@ responsiveMenu.addEventListener("click", e => {
 })
 backPage.addEventListener("click", e => {
   console.log("backPage");
-})
+});
 follwoingBtn.addEventListener('click', e => {
   console.log('follwoing Btn');
-})
+});
 messageBtn.addEventListener('click', e => {
   console.log('message Btn');
-})
+});
 Arrowbtns.addEventListener('click', e => {
   console.log("Arrow btns");
-})
+});
 iconinsta.addEventListener('click', e => {
   console.log("iconinsta");
-})
+});
        
