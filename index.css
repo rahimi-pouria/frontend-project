@@ -1,46 +1,85 @@
+.fa-chevron-left,
+.fa-ellipsis-h{
+  cursor: pointer;
+  font-weight: normal !important;
+}
+span.icon-insta > img{
+  width: 168px;
+}
+div#posts-insta {
+  margin-left: -12px;
+}
+div#Followes-insta {
+  margin-left: -26px;
+}
+div#Foolowing-insta {
+  margin-right: 25px;
+}
+.text-post-app p:nth-child(1){
+  font-weight: bold;
+  font-size: 24pt;
+}    
+.text-post-app p:nth-child(2) {
+  font-size: 22pt;
+  margin-top: -26px;
+}
+.title-account > h3 {
+  text-align: left;
+    padding-left: 21px;
+    padding-top: 30px;
+    font-size: 21pt;
+    font-weight: bold;
+}
+.title-account > p {
+    text-align: left;
+    padding-left: 21px;
+    font-size: 20pt;
+}
+.title-account > a {
+  text-align: left;
+  padding-left: 19px;
+  font-size: 20pt;
+  text-decoration: none;
+  float: left;
+  margin-bottom: 15px;
+  margin-top: -19px;
+}
+#follwoing-btn{
+  margin-left: -10px;
+}
+button#Arrow-btns {
+  padding-left: 14px;
+      padding-right: 14px;
+      padding-top: 10px;
+      padding-bottom: 8px;
+}
+#follwoing-btn{
+  padding-bottom: 9px;
+}
+
+
+
+#message-btn, #follwoing-btn{
+  padding-left: 100px !important;
+  padding-right: 100px !important;
+  font-size: 15pt;
+  
+}
+.btn-outline-light {
+  color: #000;
+  background-color: #f8f9fa;
+  border: 2px solid #efefef !important;
+}
+button#message-btn {
+  margin-left: -50px;
+}
+i.fas.fa-heart {
+  color: red;
+}
 body {
-  position: fixed;
-  inset: 0;
-  margin: auto;
-  user-select: none;
+  background: #f8f9fa !important;
+}
+.icon-insta{
+  cursor: pointer;
 }
 
-p {
-  font-size: 5rem;
-  color: white;
-  width: 500px;
-  height: 500px;
-  margin: auto;
-  background-color: cornflowerblue;
-  background-image: linear-gradient(19deg, cornflowerblue 0%, crimson 100%);
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
-  animation: morphing 10s infinite;
-  overflow: hidden;
-  cursor: url(https://cdn.custom-cursor.com/db/7476/32/minimal-apple-cursor.png),
-    default;
-}
-
-/* https://codepen.io/nickylew/pen/GYMoKM */
-@keyframes morphing {
-  0% {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    box-shadow: 15px 15px 50px rgba(0, 0, 0, 0.2);
-  }
-  25% {
-    border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
-  }
-  50% {
-    border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
-    box-shadow: -10px -5px 50px rgba(0, 0, 0, 0.2);
-  }
-  75% {
-    border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
-  }
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
