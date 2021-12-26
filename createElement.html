@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram App with react</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </head>
+<body>
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <style>
+
+        </style>
+      
+        <div id="root">
+
+        </div>
+      
+      
+        <script type="text/javascript">      
+          function div(children) {
+            return React.createElement(
+              'div',
+              { 'data-all': 'cool' },
+              React.createElement('div', { 'data-all': 'cool', className: 'container',  }, 
+              React.createElement('div', {'data-all': 'cool', className: 'row', }, 
+              React.createElement('div', {'data-all': 'cool', className: 'col-md-6 pb-5 mx-auto text-center bg-white shadow-sm'},
+              React.createElement('div', {'data-all' : 'cool', className: 'row justify-content-between mt-3'},
+                React.createElement('div', {'data-all' : 'cool', className: 'col-md-2'},
+                React.createElement('i', {'data-all' : 'cool', className: 'fa fa-chevron-left fs-1', onClick: () => {console.log('back')}, id: 'backPage',})
+                                ),
+                                React.createElement('div', {'data-all' : 'cool', className: 'col-md-4'},
+                                React.createElement('h2', {'data-all' : 'cool', },'instagram')
+                                ),
+                                React.createElement('div', {'data-all' : 'cool', className: 'col-md-2'},
+                                React.createElement('i', {'data-all' : 'cool', id: 'responsive menu', onClick: () => {console.log('responsive menu')} ,  className: 'fa fa-ellipsis-h fs-1', })
+                                ),
+                        ),
+                        React.createElement('div',{'data-all' : 'cool', className: 'row mt-5'},
+                        React.createElement('div', {'data-all' : 'cool', className: 'col-md-4'},
+                        React.createElement('img', {'data-all': 'cool', className: 'img-fluid', src: '../frontend-project/images/instagram.png'}, )
+                        ),
+                        React.createElement('div', {'data-all' : 'cool', className: 'col-md-8 mt-5'},
+                        React.createElement('div', {'data-all' : 'cool', className: 'row justify-content-between'},
+                        React.createElement('div', {'data-all' : 'cool', className: 'text-post-app col-md-4', id: 'posts-insta'},
+                        React.createElement('p', {'data-all' : 'cool', }, '6,368'),
+                        React.createElement('p',  {'data-all' : 'cool', }, 'posts'),
+                        ),
+
+                        React.createElement('div', {'data-all' : 'cool', className: 'text-post-app col-md-4', id: 'Followes-insta'},
+                                React.createElement('p', {'data-all' : 'cool', }, '350 M'),
+                                React.createElement('p',  {'data-all' : 'cool', }, 'Followes'),
+                        ),
+                        React.createElement('div', {'data-all' : 'cool', className: 'text-post-app col-md-4', id: 'Foolowing-insta'},
+                                React.createElement('p', {'data-all' : 'cool', }, '101'),
+                                React.createElement('p',  {'data-all' : 'cool', }, 'Following'),
+                        )
+                        )
+                        )
+                        ),
+                        // row body
+                        React.createElement('div', {'data-all': 'cool', className: 'row justify-content-end'},
+                                React.createElement('div', {'data-all' : 'cool', className: 'col-md-12'},
+                                        React.createElement('div', {'data-all' : 'cool', className: 'title-account'},
+                                                React.createElement('h3', {'data-all' : 'cool',}, 'instagram'),
+                                                React.createElement('p', {'data-all' : 'cool', }, 'Bringing you closer to the people and things you love.',
+                                                React.createElement('i', {'data-all' : 'cool', className: 'fas fa-heart'})),
+                                                React.createElement('a', {'data-all' : 'cool', href: '#',}, 'www.facebook.com/covidsupport')
+                                        ),
+                                ),
+                        ),
+                        // row footer
+                        React.createElement('div', {'data-all': 'cool', className: 'row'},
+                                React.createElement('div', {'data-all' : 'cool', className: 'col-md-6'},
+                                React.createElement('div', {'data-all' : 'cool', className: 'follwoing-btn'},
+                                React.createElement('button', {'data-all' : 'cool', onClick: () => {console.log('Follow')}, className: 'btn btn-primary fs-4', id: 'follwoing-btn'}, 'Follow')
+                                )
+                                
+                                ),
+                                React.createElement('div', {'data-all' : 'cool', className: 'col-md-6'},
+                                React.createElement('div', {'data-all' : 'cool', className: 'follwoing-btn'},
+                                React.createElement('button', {'data-all' : 'cool', onClick: () => {console.log('Message')}, className: 'btn btn-outline-light text-dark', id: 'message-btn'}, 'Message'),
+                                React.createElement('button', {'data-all' : 'cool', onClick: () => {console.log('arrow')}, className: 'btn btn-outline-light text-dark', id: 'Arrow-btns'},
+                                React.createElement('i', {'data-all' : 'cool', className: 'fa fa-chevron-down'})
+                                )
+                                )
+                                ),
+                        ),
+                    )
+                  )
+                ),
+            )
+          }
+      
+
+          const root = document.getElementById('root');
+          ReactDOM.render(div(), root);
+      
+        </script>
+      </body>
+      
