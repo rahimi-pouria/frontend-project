@@ -83,5 +83,7 @@ body {
 .icon-insta{
   cursor: pointer;
 }
-
+img#img-instagram {
+  width: 150px;
+}
 /* end styles projects */
