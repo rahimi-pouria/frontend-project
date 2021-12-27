@@ -20,191 +20,370 @@
         <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
       
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
         <!-- <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
         <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script> -->
       
       
 
         <script type="text/babel">      
-        // obj
-        const attributedivrow = {
-                className: 'row mt-5',
-                title: 'instagram'
-        }
-        const insideRow = {
-                className: 'row justify-content-between',
-                title: '6,368'
-        }
-        const colDiv = {
-                className: 'col-md-2',
-                title: 'posts'
-        }
-        const colmd = {
-                className: 'col-md-4',
-                title:'Followes'
-        }
-        const chavreo = {
-                className: 'fa fa-chevron-left fs-1',
-                onClick: () => {console.log('Responsive menu')
-        },
-                id: 'backPage',
-                title:'101'
-        }
-
-        const ellipsis = {
-                className: 'fa fa-ellipsis-h fs-1',
-                onClick: () => {console.log('Responsive menu')},
-                id: 'responsive menu',
-                title:'101'
-        }
-        const colMd6 = {
-                className: 'col-md-6',
-                title: 'Following'
-        }
-        const bgElement = {
-                className: 'col-md-6 pb-5 mx-auto text-center bg-white shadow-sm'
-        }
-        const textPost = {
-                className: 'text-post-app col-md-4',
-                id: 'posts-insta',
-                title: 'Bringing you closer to the people and things you love.'
-        }
-        const img = {
-                className: 'img-fluid',
-                id: 'img-instagram',
-                src: '../images/instagram.png',
-                alt: 'instagram'
-        }
-        const links = {
-                href: '#', 
-                title: 'www.facebook.com/covidsupport',
-                className: 'fas fa-heart'
-        }
-        const folowingBtn = {
-                className : 'follwoing-btn'
-        }
-        const folwersBtn = {
-                className: 'btn btn-primary fs-4', 
-                onClick: () => {console.log('follwoing')},
-                id: 'follwoing-btn'
-        }
-        const MessageBtn = {
-                className: 'btn btn-outline-light text-dark', 
-                onClick: () => {console.log('message')},
-                id: 'message-btn' , 
-                title: 'message'
-        }
-
-        const rowFooter = {
-                className: 'row justify-content-end'
-        }
-        const titleAccount = {
-                className: 'title-account'
-        }
-        const Grid = {
-                className: 'col-md-12'
-        }
                 // header component
-            const RowsHeader = (props) => {
+            const RowsHeader = ({title, onClick}) => {
+                const attributedivrow = {
+                        className: 'row mt-5',
+                        title: 'instagram'
+                }
                     return(  
-                        <div
-                              className = {attributedivrow.className}
-                        >
-                                <div className= {bgElement.className} >
-                                        <div className = {insideRow.className} >
-                                                <div className = {colDiv.className}>
-                                                        <i 
-                                                        className= {chavreo.className}
-                                                         onClick={chavreo.onClick} 
-                                                         id = {chavreo.id}></i>
-                                                </div>
-                                                <div className = {colmd.className} >
-                                                   <h2 title = {attributedivrow.title}>instagram</h2>        
-                                                </div>
-                                                <div className = {colDiv.className}>
-                                                        <i  
-                                                        className = {ellipsis.className}
-                                                        onClick = {
-                                                                ellipsis.onClick    
-                                                        }
-                                                        id = {
-                                                                ellipsis.id
-                                                        }
-                                                        ></i>   
-                                                </div>
-                                        </div>
-                                        <RowsBody></RowsBody>
-                                        <RowsFooter></RowsFooter>
-                                        <RowsButton></RowsButton>
-                                </div>
+                        <div className = {attributedivrow.className}>
+                                <AttrHeader></AttrHeader>
                            </div>
                            
                     );
             };
+            RowsHeader.propTypes = {
+            title: PropTypes.string,
+            onClick: PropTypes.func
+        };
+
+        const AttrHeader = () => {
+        const bgElement = {
+            className: 'col-md-6 pb-5 mx-auto text-center bg-white shadow-sm'
+        }
+                return (
+                        <div className= {bgElement.className} >
+                                <CompHeader></CompHeader>
+                                <RowsBody></RowsBody>
+                                <RowsFooter></RowsFooter>
+                                <RowsButton></RowsButton>
+                        </div>
+                )
+        }
+        // complete components header 
+        const CompHeader = () => {
+                const insideRow = {
+                  className: 'row justify-content-between',
+                }
+                return (
+                        <div className = {insideRow.className} >
+                                <ArrowBackHeader></ArrowBackHeader>
+                                <TitleHeader></TitleHeader>
+                                <NavbarMenu></NavbarMenu>
+                        </div>
+                )
+        }
+        const ArrowBackHeader = () => {
+                const colDiv = {
+                        className: 'col-md-2',
+                        title: 'posts'
+                }
+                const chavreo = {
+                        className: 'fa fa-chevron-left fs-1',
+                        onClick: () => {console.log('Responsive menu')
+                        },
+                        id: 'backPage',
+                }
+                return (
+                        <div className = {colDiv.className}>
+                                <i 
+                                className= {chavreo.className}
+                                        onClick={chavreo.onClick} 
+                                        id = {chavreo.id}></i>
+                        </div>
+                )
+        }
+        const TitleHeader = () => {
+                const colmd = {
+                        className: 'col-md-4',
+                        title:'Followes'
+                }
+                const attributedivrow = {
+                        className: 'row mt-5',
+                        title: 'instagram'
+                }
+                return (
+                <div className = {colmd.className} >
+                        <h2>{attributedivrow.title}</h2>        
+                </div>
+                )
+        }
+        const NavbarMenu = () => {
+                const colDiv = {
+                        className: 'col-md-2',
+                        title: 'posts'
+                }
+                const ellipsis = {
+                        className: 'fa fa-ellipsis-h fs-1',
+                        onClick: () => {console.log('Responsive menu')},
+                        id: 'responsive menu',
+                }
+                return (
+                        <div className = {colDiv.className}>
+                                <i  
+                                        className = {ellipsis.className}
+                                        onClick = {
+                                                ellipsis.onClick    
+                                        }
+                                        id = {
+                                                ellipsis.id
+                                        }
+                                ></i>   
+                        </div>
+                )
+        }
+
+        // end component header
+
             // body component
-            const RowsBody = () => {
-                   return (
-                        <div 
-                                className = {attributedivrow.className}
-                        >
-                                <div className = {colmd.className}>
-                                        <img className= {img.className} id= {img.id} src={img.src} alt = {img.alt}/>   
-                                </div>
-                                <div className="col-md-8 mt-5">
-                                <div className = {insideRow.className}>
-                                        <div className= {textPost.className} id={textPost.id}>
-                                                <p data-all="cool" title= {insideRow.title}>6,368</p>
-                                                <p data-all="cool" title= {colDiv.colDiv}>posts</p>
-                                        </div>
-                                        <div className= {textPost.className} id="Followes-insta">
-                                                <p data-all="cool" title= {chavreo.title}>350 M</p>
-                                                <p data-all="cool" title= {colmd.title}>Followes</p>
-                                        </div>
-                                        <div className= {textPost.className} id="Foolowing-insta">
-                                                <p data-all="cool" title= {ellipsis.title}>101</p>
-                                                <p data-all="cool" title= {colMd6.title}>Following</p>
-                                        </div>
-                                </div>
-                                </div>
-                        </div>
-                   );
-            };
-            // footer component
-            const RowsFooter = () => {
-                   return (
-                        <div className={rowFooter.className}>
-                        <div className= {Grid.className}>
-                           <div className = {titleAccount.className}>
-                                <h3 title ={attributedivrow.title}>instagram</h3>
-                                <p title = {textPost.title}>Bringing you closer to the people and things you love.
-                                        <i className={links.className}></i>
-                                </p>
-                                <a href={links.href} title= {links.title}>www.facebook.com/covidsupport</a>
-                           </div>
-                        </div>
-                    </div>
-                   );
-            };
-            // button component
-            const RowsButton = () => {
+            const RowsBody = ({title}) => {
+                const attributedivrow = {
+                        className: 'row mt-5',
+                        title: 'instagram'
+                }
                    return (
                         <div className = {attributedivrow.className}>
-                       <div className={colMd6.className}>
-                          <div className={folowingBtn.className}>
-                                <button data-all="cool" className={folwersBtn.className} onClick={folwersBtn.onClick} id={folwersBtn.id}>Follow</button>
-                          </div>
+                                <PhotoProfile></PhotoProfile>
+                                <div className="col-md-8 mt-5">
+                                        <FollowersProfile></FollowersProfile>
+                                </div>
                         </div>
-                       <div className={colMd6.className}>
-                            <div className={folowingBtn.className}>
-                                <button data-all="cool" className={MessageBtn.className} onClick={MessageBtn.onClick } id={MessageBtn.id } title= {MessageBtn.title }>Message</button>
+                   );
+            };
+            const PhotoProfile = () => {
+                const colMd6 = {
+                        className: 'col-md-6',
+                        title: 'Following'
+                }
+                const colmd = {
+                        className: 'col-md-4',
+                        title:'Followes'
+                }
+                const img = {
+                        className: 'img-fluid',
+                        id: 'img-instagram',
+                        src: '../images/instagram.png',
+                        alt: 'instagram'
+                }
+                    return (
+                        <div className = {colmd.className}>
+                                <img className= {img.className} id= {img.id} src={img.src} alt = {img.alt}/>   
+                        </div>
+                    )
+            }
+            const FollowersProfile = () => {
+
+                const insideRow = {
+                   className: 'row justify-content-between',
+                }
+               return (
+                <div className = {insideRow.className}>
+                        <Post></Post>
+                        <Following></Following>
+                        <Followers></Followers>
+                 </div>
+               )
+            }
+            const Post = () =>{
+                const textPost = {
+                        className: 'text-post-app col-md-4',
+                        id: 'posts-insta',
+                        title: 'Bringing you closer to the people and things you love.'
+                }
+                const insideRow = {
+                        className: 'row justify-content-between',
+                        title: 500
+                }
+                const colDiv = {
+                        className: 'col-md-2',
+                        title: 'posts'
+                }
+                    return (
+                        <div className= {textPost.className} id={textPost.id}>
+                                                <p data-all="cool"  >{insideRow.title}</p>
+                                                <p data-all="cool">{colDiv.title}</p>
+                        </div>
+                    )
+            }
+
+            const Following = () => {
+                const textPost = {
+                        className: 'text-post-app col-md-4',
+                        id: 'posts-insta',
+                        title: 'Bringing you closer to the people and things you love.'
+                }
+                const chavreo = {
+                        className: 'fa fa-chevron-left fs-1',
+                        onClick: () => {console.log('Responsive menu')
+                },
+                        id: 'backPage',
+                        title:150
+                }
+                const colmd = {
+                        className: 'col-md-4',
+                        title:'Followes'
+                }
+                    return (
+                        <div className= {textPost.className} id="Followes-insta">
+                                <p data-all="cool">{chavreo.title}</p>
+                                <p data-all="cool">{colmd.title}</p>
+                        </div>
+                    )
+            }
+            const Followers = () => {
+                const textPost = {
+                        className: 'text-post-app col-md-4',
+                        id: 'posts-insta',
+                        title: 'Bringing you closer to the people and things you love.'
+                }
+                const ellipsis = {
+                        className: 'fa fa-ellipsis-h fs-1',
+                        onClick: () => {console.log('Responsive menu')},
+                        id: 'responsive menu',
+                        title:336
+                }
+                const colMd6 = {
+                        className: 'col-md-6',
+                        title: 'Following'
+                }
+                    return (
+                        <div className= {textPost.className} id="Foolowing-insta">
+                                                <p data-all="cool">{ellipsis.title}</p>
+                                                <p data-all="cool">{colMd6.title}</p>
+                        </div>
+                    )
+            }
+        // end body component
+            RowsBody.propTypes = {
+            title: PropTypes.string
+        };
+            // footer component
+                const RowsFooter = ({title}) => {
+                        const rowFooter = {
+                          className: 'row justify-content-end'
+                        }    
+                   return (
+                        <div className={rowFooter.className}>
+                          <NameProfile></NameProfile>      
+                        </div>
+                   );
+            };
+
+            const NameProfile = () => {
+                const Grid = {
+                   className: 'col-md-12'
+                }
+                    return (
+                        <div className= {Grid.className}>
+                                <BioProfile></BioProfile>
+                        </div>
+                    )
+            }
+            const BioProfile = () => {
+                const titleAccount = {
+                        className: 'title-account'
+                }
+                const attributedivrow = {
+                        className: 'row mt-5',
+                        title: 'instagram'
+                }
+                const textPost = {
+                        className: 'text-post-app col-md-4',
+                        id: 'posts-insta',
+                        title: 'Bringing you closer to the people and things you love.'
+                }
+                const links = {
+                        href: '#', 
+                        title: 'www.facebook.com/covidsupport',
+                        className: 'fas fa-heart'
+                }
+                    return (
+                        <div className = {titleAccount.className}>
+                                <h3>{attributedivrow.title}</h3>
+                                <p>{textPost.title}
+                                        <i className={links.className}></i>
+                                </p>
+                                <a href={links.href}>{links.title}</a>
+                           </div>
+                    )
+            }
+            RowsFooter.propTypes = {
+            title: PropTypes.string
+        };
+            // end footer component
+
+            // button component
+                const RowsButton = () => {
+                        const attributedivrow = {
+                        className: 'row mt-5',
+                        title: 'instagram'
+                }
+                   return (
+                <div className = {attributedivrow.className}>
+                        <BtnFooterApp></BtnFooterApp>
+                        <DivitionBtn></DivitionBtn>
+                </div>
+                );
+            };
+
+
+            const Followbutton = () => {
+                const folowingBtn = {
+                        className : 'follwoing-btn'
+                }
+                const folwersBtn = {
+                        className: 'btn btn-primary fs-4', 
+                        onClick: () => {console.log('follwoing')},
+                        id: 'follwoing-btn',
+                        title: 'Follow'
+                }
+                return (
+                <div className={folowingBtn.className}>
+                        <button data-all="cool" className={folwersBtn.className} onClick={folwersBtn.onClick} id={folwersBtn.id}>{folwersBtn.title}</button>
+                </div>
+                )
+            }
+            const BtnFooterApp = () => {
+                const colMd6 = {
+                        className: 'col-md-6',
+                        title: 'Following'
+                }
+                    return (
+                        <div className={colMd6.className}>
+                          <Followbutton></Followbutton>
+                        </div>
+                    )
+            }
+            const DivitionBtn = () => {
+                const colMd6 = {
+                        className: 'col-md-6',
+                        title: 'Following'
+                }
+                    return (
+                        <div className={colMd6.className}>
+                            <Btns></Btns>
+                        </div>
+                    )
+            }
+            const Btns = () => {
+                const folowingBtn = {
+                        className : 'follwoing-btn'
+                }
+                const MessageBtn = {
+                        className: 'btn btn-outline-light text-dark', 
+                        onClick: () => {console.log('message')},
+                        id: 'message-btn' , 
+                        title: 'message'
+                }
+                    return (
+                        <div className={folowingBtn.className}>
+                                <button data-all="cool" className={MessageBtn.className} onClick={MessageBtn.onClick } id={MessageBtn.id }>{MessageBtn.title }</button>
                                 <button data-all="cool" className={MessageBtn.className} {...MessageBtn} onClick={() => {console.log('Arrow')}}  id="Arrow-btns">
                                      <i data-all="cool" className="fa fa-chevron-down"></i>
                                 </button>
                             </div>
-                        </div>
-                    </div>
-                   );
-            };
+                    )
+            }
+        // end component Btns
+
 
             const Containers = (props) => {
                 return (
