@@ -37,8 +37,7 @@
                     );
             };
             RowsHeader.propTypes = {
-            title: PropTypes.string,
-            onClick: PropTypes.func
+                attributedivrowClass: PropTypes.object,
         };
         const AttrHeader = ({bgElementClass}) => {
                 return (
@@ -50,6 +49,9 @@
                         </div>
                 )
         }
+        AttrHeader.propTypes  = {
+                bgElementClass: PropTypes.object    
+        }
         // complete components header 
         const CompHeader = ({insideRowClass}) => {
                 return (
@@ -60,12 +62,20 @@
                         </div>
                 )
         }
+        CompHeader.propTypes = {
+                insideRowClass: propTypes.object    
+        }
         const ArrowBackHeader = ({colDivClass, chavreoClass, chavreoId}) => {
                 return (
                         <div className = {colDivClass}>
                                 <i className= {chavreoClass} id = {chavreoId}></i>
                         </div>
                 )
+        }
+        ArrowBackHeader.propTypes = {
+                colDivClass: propTypes.object,
+                chavreoClass: propTypes.object,  
+                chavreoId: propTypes.object
         }
         const TitleHeader = ({colmdClass, attributedivrowTitle}) => {
                 return (
@@ -74,6 +84,10 @@
                 </div>
                 )
         }
+        TitleHeader.propTypes = {
+                colmdClass:  propTypes.object,
+                attributedivrowTitle:propTypes.string  
+        }
         const NavbarMenu = ({colDivClass, ellipsisClass, ellipsisId, }) => {
                 return (
                         <div className = {colDivClass}>
@@ -81,7 +95,11 @@
                         </div>
                 )
         }
-
+        NavbarMenu.prototype = {
+                colDivClass:propTypes.object,
+                ellipsisClass:propTypes.object,
+                ellipsisId: propTypes.object   
+        }
         // end component header
 
             // body component
@@ -95,12 +113,22 @@
                         </div>
                    );
             };
+            RowsBody.prototype = {
+                attributedivrowClass: propTypes.object     
+            }
             const PhotoProfile = ({colmdlass,imgClass, imgId, imgSrc, imgAlt  }) => {
                     return (
                         <div className = {colmdlass}>
                                 <img className= {imgClass} id= {imgId} src={imgSrc} alt = {imgAlt}/>   
                         </div>
                     )
+            }
+            PhotoProfile.propTypes = {
+                colmdlass: propTypes.object,
+                imgClass: propTypes.object,
+                imgId: propTypes.object,
+                imgSrc: propTypes.string,
+                imgAlt: propTypes.string
             }
             const FollowersProfile = ({insideRowClass }) => {
                return (
@@ -111,6 +139,9 @@
                  </div>
                )
             }
+            FollowersProfile.propTypes = {
+                insideRowClass: propTypes.object  
+            }
             const Post = ({textPostClass, textPostId,insideRowTitle, colDivTitle }) =>{
                     return (
                         <div className= {textPostClass} id={textPostId}>
@@ -119,7 +150,12 @@
                         </div>
                     )
             }
-
+            Post.propTypes = {
+                textPostClass :propTypes.object ,
+                textPostId : propTypes.object,
+                insideRowTitle: propTypes.string,
+                colDivTitle: propTypes.string
+            }
             const Following = ({textPostClass,chavreoTtitle,colmdTitle }) => {
                     return (
                         <div className= {textPostClass} id="Followes-insta">
@@ -127,6 +163,11 @@
                                 <p data-all="cool">{colmdTitle}</p>
                         </div>
                     )
+            }
+            Following.propTypes = {
+                textPostClass: propTypes.object,
+                chavreoTtitle: propTypes.string,
+                colmdTitle: prototype.string
             }
             const Followers = ({textPostClass,colMd6Title, ellipsisTitle }) => {
 
@@ -137,12 +178,12 @@
                         </div>
                     )
             }
+            Followers.propTypes = {
+                textPostClass: propTypes.object,
+                colMd6Title: propTypes.string,
+                ellipsisTitle: propTypes.string
+            }
         // end body component
-
-
-            RowsBody.propTypes = {
-            title: PropTypes.string
-        };
             // footer component
                 const RowsFooter = ({rowFooterClass}) => { 
                    return (
@@ -151,15 +192,20 @@
                         </div>
                    );
             };
-
+            RowsFooter.propTypes = {
+                rowFooterClass:propTypes.object     
+            }
             const NameProfile = ({GridClass}) => {
                     return (
                         <div className= {GridClass}>
-                                <BioProfile titleAccountClass="title-account" attributedivrowTitle="instagram" textPostTitle="Bringing you closer to the people and things you love." linksHref="#" linksClass="www.facebook.com/covidsupport" linkTitle="www.facebook.com/covidsupport"></BioProfile>
+                                <BioProfile titleAccountClass="title-account" attributedivrowTitle="instagram" textPostTitle="Bringing you closer to the people and things you love." linksHref="#" linksClass="www.facebook.com/covidsupport" linksTitle="www.facebook.com/covidsupport"></BioProfile>
                         </div>
                     )
             }
-            const BioProfile = ({titleAccountClass, attributedivrowTitle, textPostTitle, linksHref, linksClass,linkTitle}) => {
+            NameProfile.propTypes = {
+                GridClass: propTypes.object
+            }
+            const BioProfile = ({titleAccountClass, attributedivrowTitle, textPostTitle, linksHref, linksClass,linksTitle}) => {
                     return (
                         <div className = {titleAccountClass}>
                                 <h3>{attributedivrowTitle}</h3>
@@ -170,8 +216,13 @@
                            </div>
                     )
             }
-            RowsFooter.propTypes = {
-            title: PropTypes.string
+            BioProfile.propTypes = {
+                titleAccountClass: PropTypes.object,
+                attributedivrowTitle: propTypes.string,
+                textPostTitle: propTypes.string,
+                linksHref: propTypes.string,
+                linksClass: propTypes.object,
+                linksTitle: propTypes.string
         };
             // end footer component
 
@@ -184,13 +235,19 @@
                 </div>
                 );
             };
-
+            RowsButton.propTypes = {
+                attributedivClass: propTypes.object,
+                attributedivId: propTypes.object
+            }
             const DivitionBtn = ({colMd6Class}) => {
                     return (
                         <div className={colMd6Class}>
                             <Btns folowingBtnClass="follwoing-btn"MessageBtnClass="btn btn-outline-light text-dark" MessageBtnTitle="message" MessageBtnId="message-btn"></Btns>
                         </div>
                     )
+            }
+            DivitionBtn.propTypes = {
+                colMd6Class:propTypes.object
             }
             const Btns = ({folowingBtnClass,MessageBtnClass, MessageBtnTitle, MessageBtnId}) => {
                     return (
@@ -202,6 +259,12 @@
                             </div>
                     )
             }
+            Btns.propTypes = {
+                folowingBtnClass : propTypes.object,
+                MessageBtnClass:   propTypes.object, 
+                MessageBtnTitle: propTypes.string,
+                MessageBtnId: propTypes.object
+            }
             const BtnFooterApp = ({colMd6Class}) => {
 
                     return (
@@ -210,7 +273,9 @@
                         </div>
                     )
             }
-
+            BtnFooterApp.propTypes = {
+                colMd6Class: propTypes.object    
+            }
             const Followbutton = ({folowingBtnClass, folwersBtnClass, folwersBtnId, folwersBtnTitle}) => {      
                 return (
                 <div className={folowingBtnClass}>
@@ -218,7 +283,12 @@
                 </div>
                 )
             }
-
+            Followbutton.propTypes = {
+                folowingBtnClass: propTypes.object,
+                folwersBtnClass: propTypes.object,
+                folwersBtnId: propTypes.object,
+                folwersBtnTitle: propTypes.string
+            }
         // end component Btns
 
 
