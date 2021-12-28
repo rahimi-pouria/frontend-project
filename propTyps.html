@@ -28,14 +28,10 @@
 
         <script type="text/babel">      
                 // header component
-            const RowsHeader = ({title, onClick}) => {
-                const attributedivrow = {
-                        className: 'row mt-5',
-                        title: 'instagram'
-                }
+            const RowsHeader = ({attributedivrowClass}) => {
                     return(  
-                        <div className = {attributedivrow.className}>
-                                <AttrHeader></AttrHeader>
+                        <div className = {attributedivrowClass}>
+                                <AttrHeader bgElementClass="col-md-6 pb-5 mx-auto text-center bg-white shadow-sm"></AttrHeader>
                            </div>
                            
                     );
@@ -44,89 +40,44 @@
             title: PropTypes.string,
             onClick: PropTypes.func
         };
-
-        const AttrHeader = () => {
-        const bgElement = {
-            className: 'col-md-6 pb-5 mx-auto text-center bg-white shadow-sm'
-        }
+        const AttrHeader = ({bgElementClass}) => {
                 return (
-                        <div className= {bgElement.className} >
-                                <CompHeader></CompHeader>
-                                <RowsBody></RowsBody>
-                                <RowsFooter></RowsFooter>
-                                <RowsButton></RowsButton>
+                        <div className= {bgElementClass} >
+                                <CompHeader insideRowClass='row justify-content-between'></CompHeader>
+                                <RowsBody attributedivrowClass = "row mt-5"></RowsBody>
+                                <RowsFooter rowFooter="row justify-content-end"></RowsFooter>
+                                <RowsButton attributedivClass="row mt-5"attributedivId="attribute"></RowsButton>
                         </div>
                 )
         }
         // complete components header 
-        const CompHeader = () => {
-                const insideRow = {
-                  className: 'row justify-content-between',
-                }
+        const CompHeader = ({insideRowClass}) => {
                 return (
-                        <div className = {insideRow.className} >
-                                <ArrowBackHeader></ArrowBackHeader>
-                                <TitleHeader></TitleHeader>
-                                <NavbarMenu></NavbarMenu>
+                        <div className = {insideRowClass} >
+                                <ArrowBackHeader colDivClass = "col-md-2" chavreoClass="fa fa-chevron-left fs-1" chavreoId = "backPage"></ArrowBackHeader>
+                                <TitleHeader colmdClass="col-md-4" attributedivrowTitle="instagram"></TitleHeader>
+                                <NavbarMenu colDivClass= "col-md-2" ellipsisClass = "fa fa-ellipsis-h fs-1" ellipsisId = "responsive menu"  onClick = "console.log('Responsive menu')" ></NavbarMenu>
                         </div>
                 )
         }
-        const ArrowBackHeader = () => {
-                const colDiv = {
-                        className: 'col-md-2',
-                        title: 'posts'
-                }
-                const chavreo = {
-                        className: 'fa fa-chevron-left fs-1',
-                        onClick: () => {console.log('Responsive menu')
-                        },
-                        id: 'backPage',
-                }
+        const ArrowBackHeader = ({colDivClass, chavreoClass, chavreoId}) => {
                 return (
-                        <div className = {colDiv.className}>
-                                <i 
-                                className= {chavreo.className}
-                                        onClick={chavreo.onClick} 
-                                        id = {chavreo.id}></i>
+                        <div className = {colDivClass}>
+                                <i className= {chavreoClass} id = {chavreoId}></i>
                         </div>
                 )
         }
-        const TitleHeader = () => {
-                const colmd = {
-                        className: 'col-md-4',
-                        title:'Followes'
-                }
-                const attributedivrow = {
-                        className: 'row mt-5',
-                        title: 'instagram'
-                }
+        const TitleHeader = ({colmdClass, attributedivrowTitle}) => {
                 return (
-                <div className = {colmd.className} >
-                        <h2>{attributedivrow.title}</h2>        
+                <div className = {colmdClass} >
+                        <h2>{attributedivrowTitle}</h2>        
                 </div>
                 )
         }
-        const NavbarMenu = () => {
-                const colDiv = {
-                        className: 'col-md-2',
-                        title: 'posts'
-                }
-                const ellipsis = {
-                        className: 'fa fa-ellipsis-h fs-1',
-                        onClick: () => {console.log('Responsive menu')},
-                        id: 'responsive menu',
-                }
+        const NavbarMenu = ({colDivClass, ellipsisClass, ellipsisId, }) => {
                 return (
-                        <div className = {colDiv.className}>
-                                <i  
-                                        className = {ellipsis.className}
-                                        onClick = {
-                                                ellipsis.onClick    
-                                        }
-                                        id = {
-                                                ellipsis.id
-                                        }
-                                ></i>   
+                        <div className = {colDivClass}>
+                                <i  className = {ellipsisClass} id = {ellipsisId}></i>   
                         </div>
                 )
         }
@@ -134,174 +85,88 @@
         // end component header
 
             // body component
-            const RowsBody = ({title}) => {
-                const attributedivrow = {
-                        className: 'row mt-5',
-                        title: 'instagram'
-                }
+            const RowsBody = ({attributedivrowClass}) => {
                    return (
-                        <div className = {attributedivrow.className}>
-                                <PhotoProfile></PhotoProfile>
+                        <div className = {attributedivrowClass}>
+                                <PhotoProfile colmdlass="col-md-4" imgClass="img-fluid" imgId="img-instagram" imgSrc="../images/instagram.png" imgAlt="instagram"></PhotoProfile>
                                 <div className="col-md-8 mt-5">
-                                        <FollowersProfile></FollowersProfile>
+                                        <FollowersProfile insideRowClass= "row justify-content-between"></FollowersProfile>
                                 </div>
                         </div>
                    );
             };
-            const PhotoProfile = () => {
-                const colMd6 = {
-                        className: 'col-md-6',
-                        title: 'Following'
-                }
-                const colmd = {
-                        className: 'col-md-4',
-                        title:'Followes'
-                }
-                const img = {
-                        className: 'img-fluid',
-                        id: 'img-instagram',
-                        src: '../images/instagram.png',
-                        alt: 'instagram'
-                }
+            const PhotoProfile = ({colmdlass,imgClass, imgId, imgSrc, imgAlt  }) => {
                     return (
-                        <div className = {colmd.className}>
-                                <img className= {img.className} id= {img.id} src={img.src} alt = {img.alt}/>   
+                        <div className = {colmdlass}>
+                                <img className= {imgClass} id= {imgId} src={imgSrc} alt = {imgAlt}/>   
                         </div>
                     )
             }
-            const FollowersProfile = () => {
-
-                const insideRow = {
-                   className: 'row justify-content-between',
-                }
+            const FollowersProfile = ({insideRowClass }) => {
                return (
-                <div className = {insideRow.className}>
-                        <Post></Post>
-                        <Following></Following>
-                        <Followers></Followers>
+                <div className = {insideRowClass}>
+                        <Post textPostClass="text-post-app col-md-4" textPostId="posts-insta" insideRowTitle="500"colDivTitle="posts" ></Post>
+                        <Following textPostClass="text-post-app col-md-4" chavreoTtitle="150" colmdTitle="Followes"></Following>
+                        <Followers textPostClass="text-post-app col-md-4" ellipsisTitle="336" colMd6Title="Following"></Followers>
                  </div>
                )
             }
-            const Post = () =>{
-                const textPost = {
-                        className: 'text-post-app col-md-4',
-                        id: 'posts-insta',
-                        title: 'Bringing you closer to the people and things you love.'
-                }
-                const insideRow = {
-                        className: 'row justify-content-between',
-                        title: 500
-                }
-                const colDiv = {
-                        className: 'col-md-2',
-                        title: 'posts'
-                }
+            const Post = ({textPostClass, textPostId,insideRowTitle, colDivTitle }) =>{
                     return (
-                        <div className= {textPost.className} id={textPost.id}>
-                                                <p data-all="cool"  >{insideRow.title}</p>
-                                                <p data-all="cool">{colDiv.title}</p>
+                        <div className= {textPostClass} id={textPostId}>
+                                <p data-all="cool"  >{insideRowTitle}</p>
+                                <p data-all="cool">{colDivTitle}</p>
                         </div>
                     )
             }
 
-            const Following = () => {
-                const textPost = {
-                        className: 'text-post-app col-md-4',
-                        id: 'posts-insta',
-                        title: 'Bringing you closer to the people and things you love.'
-                }
-                const chavreo = {
-                        className: 'fa fa-chevron-left fs-1',
-                        onClick: () => {console.log('Responsive menu')
-                },
-                        id: 'backPage',
-                        title:150
-                }
-                const colmd = {
-                        className: 'col-md-4',
-                        title:'Followes'
-                }
+            const Following = ({textPostClass,chavreoTtitle,colmdTitle }) => {
                     return (
-                        <div className= {textPost.className} id="Followes-insta">
-                                <p data-all="cool">{chavreo.title}</p>
-                                <p data-all="cool">{colmd.title}</p>
+                        <div className= {textPostClass} id="Followes-insta">
+                                <p data-all="cool">{chavreoTtitle}</p>
+                                <p data-all="cool">{colmdTitle}</p>
                         </div>
                     )
             }
-            const Followers = () => {
-                const textPost = {
-                        className: 'text-post-app col-md-4',
-                        id: 'posts-insta',
-                        title: 'Bringing you closer to the people and things you love.'
-                }
-                const ellipsis = {
-                        className: 'fa fa-ellipsis-h fs-1',
-                        onClick: () => {console.log('Responsive menu')},
-                        id: 'responsive menu',
-                        title:336
-                }
-                const colMd6 = {
-                        className: 'col-md-6',
-                        title: 'Following'
-                }
+            const Followers = ({textPostClass,colMd6Title, ellipsisTitle }) => {
+
                     return (
-                        <div className= {textPost.className} id="Foolowing-insta">
-                                                <p data-all="cool">{ellipsis.title}</p>
-                                                <p data-all="cool">{colMd6.title}</p>
+                        <div className= {textPostClass} id="Foolowing-insta">
+                                <p data-all="cool">{ellipsisTitle}</p>
+                                <p data-all="cool">{colMd6Title}</p>
                         </div>
                     )
             }
         // end body component
+
+
             RowsBody.propTypes = {
             title: PropTypes.string
         };
             // footer component
-                const RowsFooter = ({title}) => {
-                        const rowFooter = {
-                          className: 'row justify-content-end'
-                        }    
+                const RowsFooter = ({rowFooterClass}) => { 
                    return (
-                        <div className={rowFooter.className}>
-                          <NameProfile></NameProfile>      
+                        <div className={rowFooterClass}>
+                          <NameProfile GridClass="col-md-12"></NameProfile>      
                         </div>
                    );
             };
 
-            const NameProfile = () => {
-                const Grid = {
-                   className: 'col-md-12'
-                }
+            const NameProfile = ({GridClass}) => {
                     return (
-                        <div className= {Grid.className}>
-                                <BioProfile></BioProfile>
+                        <div className= {GridClass}>
+                                <BioProfile titleAccountClass="title-account" attributedivrowTitle="instagram" textPostTitle="Bringing you closer to the people and things you love." linksHref="#" linksClass="www.facebook.com/covidsupport" linkTitle="www.facebook.com/covidsupport"></BioProfile>
                         </div>
                     )
             }
-            const BioProfile = () => {
-                const titleAccount = {
-                        className: 'title-account'
-                }
-                const attributedivrow = {
-                        className: 'row mt-5',
-                        title: 'instagram'
-                }
-                const textPost = {
-                        className: 'text-post-app col-md-4',
-                        id: 'posts-insta',
-                        title: 'Bringing you closer to the people and things you love.'
-                }
-                const links = {
-                        href: '#', 
-                        title: 'www.facebook.com/covidsupport',
-                        className: 'fas fa-heart'
-                }
+            const BioProfile = ({titleAccountClass, attributedivrowTitle, textPostTitle, linksHref, linksClass,linkTitle}) => {
                     return (
-                        <div className = {titleAccount.className}>
-                                <h3>{attributedivrow.title}</h3>
-                                <p>{textPost.title}
-                                        <i className={links.className}></i>
+                        <div className = {titleAccountClass}>
+                                <h3>{attributedivrowTitle}</h3>
+                                <p>{textPostTitle}
+                                        <i className={linksClass}></i>
                                 </p>
-                                <a href={links.href}>{links.title}</a>
+                                <a href={linksHref}>{linkTitle}</a>
                            </div>
                     )
             }
@@ -311,84 +176,56 @@
             // end footer component
 
             // button component
-                const RowsButton = () => {
-                        const attributedivrow = {
-                        className: 'row mt-5',
-                        title: 'instagram'
-                }
+                const RowsButton = ({attributedivClass, attributedivId}) => {
                    return (
-                <div className = {attributedivrow.className}>
-                        <BtnFooterApp></BtnFooterApp>
-                        <DivitionBtn></DivitionBtn>
+                <div className = {attributedivClass} id={attributedivId}>
+                        <BtnFooterApp colMd6Class="col-md-6"></BtnFooterApp>
+                        <DivitionBtn colMd6Class="col-md-6"></DivitionBtn>
                 </div>
                 );
             };
 
-
-            const Followbutton = () => {
-                const folowingBtn = {
-                        className : 'follwoing-btn'
-                }
-                const folwersBtn = {
-                        className: 'btn btn-primary fs-4', 
-                        onClick: () => {console.log('follwoing')},
-                        id: 'follwoing-btn',
-                        title: 'Follow'
-                }
-                return (
-                <div className={folowingBtn.className}>
-                        <button data-all="cool" className={folwersBtn.className} onClick={folwersBtn.onClick} id={folwersBtn.id}>{folwersBtn.title}</button>
-                </div>
-                )
-            }
-            const BtnFooterApp = () => {
-                const colMd6 = {
-                        className: 'col-md-6',
-                        title: 'Following'
-                }
+            const DivitionBtn = ({colMd6Class}) => {
                     return (
-                        <div className={colMd6.className}>
-                          <Followbutton></Followbutton>
+                        <div className={colMd6Class}>
+                            <Btns folowingBtnClass="follwoing-btn"MessageBtnClass="btn btn-outline-light text-dark" MessageBtnTitle="message" MessageBtnId="message-btn"></Btns>
                         </div>
                     )
             }
-            const DivitionBtn = () => {
-                const colMd6 = {
-                        className: 'col-md-6',
-                        title: 'Following'
-                }
+            const Btns = ({folowingBtnClass,MessageBtnClass, MessageBtnTitle, MessageBtnId}) => {
                     return (
-                        <div className={colMd6.className}>
-                            <Btns></Btns>
-                        </div>
-                    )
-            }
-            const Btns = () => {
-                const folowingBtn = {
-                        className : 'follwoing-btn'
-                }
-                const MessageBtn = {
-                        className: 'btn btn-outline-light text-dark', 
-                        onClick: () => {console.log('message')},
-                        id: 'message-btn' , 
-                        title: 'message'
-                }
-                    return (
-                        <div className={folowingBtn.className}>
-                                <button data-all="cool" className={MessageBtn.className} onClick={MessageBtn.onClick } id={MessageBtn.id }>{MessageBtn.title }</button>
-                                <button data-all="cool" className={MessageBtn.className} {...MessageBtn} onClick={() => {console.log('Arrow')}}  id="Arrow-btns">
+                        <div className={folowingBtnClass}>
+                                <button data-all="cool" className={MessageBtnClass} id={MessageBtnId }>{MessageBtnTitle }</button>
+                                <button data-all="cool" className={MessageBtnClass}    id="Arrow-btns">
                                      <i data-all="cool" className="fa fa-chevron-down"></i>
                                 </button>
                             </div>
                     )
             }
+            const BtnFooterApp = ({colMd6Class}) => {
+
+                    return (
+                        <div className={colMd6Class}>
+                          <Followbutton folowingBtnClass="follwoing-btn" folwersBtnClass="btn btn-primary fs-4" folwersBtnId="follwoing-btn" folwersBtnTitle="Follow"></Followbutton>
+                        </div>
+                    )
+            }
+
+            const Followbutton = ({folowingBtnClass, folwersBtnClass, folwersBtnId, folwersBtnTitle}) => {      
+                return (
+                <div className={folowingBtnClass}>
+                        <button data-all="cool" className={folwersBtnClass}  id={folwersBtnId}>{folwersBtnTitle}</button>
+                </div>
+                )
+            }
+
         // end component Btns
 
 
             const Containers = (props) => {
                 return (
                         <div className={props.className}>
-                                <RowsHeader></RowsHeader>
+                                <RowsHeader attributedivrowClass="row mt-5"></RowsHeader>
                         </div>
                 );
             };
