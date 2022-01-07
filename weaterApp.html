@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article App</title>
+    <link rel="stylesheet" href="./digikala.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+
+        <div id="root"></div>
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+        <!-- <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script> -->
+      
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="./PhtoGrapher.js"></script> 
+        <style>
+            body{ 
+
+                background-repeat: no-repeat;
+                background-size: 1920px 1500px;
+                background: #00d0ffb0;
+
+            }
+            i.fa.fa-heart {
+                color: red;
+                font-size: 14px;
+            }
+            .WeaterApp {    
+                background: #7e93a9;
+                color: #fff;
+                border-radius: 5px;
+            }
+            .headerApp {
+                text-align: center;
+                height: 380px;
+
+            }
+            .WaterNumber {
+                font-size: 8rem !important;
+                font-weight: normal;
+            }
+            .card{
+                width: 14rem;
+                padding-right: 15px;
+                padding-left: 15px;
+                padding-top: 15px;
+                background:#0d9eb59e;
+                margin-top: 22px;
+                float: left;
+                margin-right: 40px;
+                height: 446px;
+                animation: [animation-name] [animation-duration] [animation-timing-function];
+                animation: bounceIn 2s ease-in-out;
+            }
+            button.btn.btn-primary {
+                margin-left: 15px;
+                margin-top: 15px;
+            }
+            img.card-img-top.img-fluid {
+                height: 250px;
+            }
+            .btn-primary {
+                color: #fff;
+                background-color: #0069d9;
+                border-color: #0062cc;
+                margin-left: -22px;
+            }
+            h5.card-title {
+                text-align: center;
+                font-size: 20px;
+                margin-left: -12px;
+                font-family: sans-serif;
+            }
+            .card-body > p {
+                text-align: left;
+                margin-left: -11px;
+            }
+            .nav-tabs {
+                border-bottom: 1px solid #4fdeff;
+                color: #fff !important;
+                padding: 30px;
+            }
+            form {
+                text-align: center;
+                margin-top: 50px;
+            }
+            input[type="text"] {
+                    border: 1px solid #fff;
+                    padding: 5px;
+                    border-radius: 5px 0 0 5px;
+                    background: #c5f6ff;
+
+                }
+                button {
+                    padding: 5px 11px;
+                    border: 1px solid #fff;
+                    background: #c5f6ff;
+                }
+                .modal-footer {
+                    background: #1745507a;
+                }
+                .modal-body {
+                    background: #1745507a;
+                }
+                .modal-header {
+                    background: #1745507a;
+                }
+                .modal-footer {
+                    display: -ms-flexbox;
+                    display: flex;
+                    -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    -ms-flex-pack: end;
+                    justify-content: flex-end;
+                    padding: 0.75rem;
+                    border-top: 1px solid #46eda0ed;
+                    border-bottom-right-radius: calc(0.3rem - 1px);
+                    border-bottom-left-radius: calc(0.3rem - 1px);
+                }
+                .modal-header {
+                        display: -ms-flexbox;
+                        display: flex;
+                        -ms-flex-align: start;
+                        align-items: flex-start;
+                        -ms-flex-pack: justify;
+                        justify-content: space-between;
+                        padding: 1rem 1rem;
+                        border-bottom: 1px solid #46eda0ed;
+                        border-top-left-radius: calc(0.3rem - 1px);
+                        border-top-right-radius: calc(0.3rem - 1px);
+                    }
+        </style>       
+        <script type="text/babel">  
+            const WeaterR = () => {
+                const [data, setData] = React.useState([{}]);
+                React.useEffect( () => {
+                    fetch('http://hp-api.herokuapp.com/api/characters')
+                    .then(response => response.json())
+                    .then(json =>  {
+                        console.log(json)
+                        setData(json)
+                    });
+                }, [])
+                return (
+                    <pre>
+                        <div className = "container-fluid">
+                            <div className = "row">
+                                <div className = "col-md-12">
+                                    
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">All</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Gryffindor</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Slytherin</button>
+                            </li>
+                        </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> 
+                                    
+                                        {data.map((item, index) => (
+                                            <div class="card animate__zoomInDown" key="index">
+                                                 <img src={item.image} class="card-img-top img-fluid" alt=""/>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">{item.name}</h5>
+
+                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                                           See more
+                                                            </button>
+                                                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">{item.name}</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <p> <i class="fa fa-heart"></i> Gender: {item.gender}</p>
+                                                                    <p>House: {item.house}</p>
+                                                                    <p>species : {item.species}</p>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                    </div>
+                                            </div>
+                                        ))}
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    {data.filter(data => data.house = "Gryffindor").map((item, index) => (
+                                            <div class="card" key="index">
+                                                 <img src={item.image} class="card-img-top img-fluid" alt=""/>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">{item.name}</h5>
+                                                        <p> <i class="fa fa-heart"></i> Gender: {item.gender}</p>
+                                                        <p>House: {item.house}</p>
+                                                        <p>species : {item.species}</p>
+                                                    </div>
+                                            </div>
+                                            
+                                    ))}
+    
+                                    
+                                </div>
+                                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                    {data.filter(data => data.house = "Slytherin").map((item, index) => (
+                                            <div class="card" key="index">
+                                                 <img src={item.image} class="card-img-top img-fluid" alt=""/>
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">{item.name}</h5>
+                                                        <p> <i class="fa fa-heart"></i> Gender: {item.gender}</p>
+                                                        <p>House: {item.house}</p>
+                                                        <p>species : {item.species}</p>
+                                                    </div>
+                                            </div>
+                                            
+                                    ))}
+                                    
+                                </div>
+                            </div>
+                                </div>    
+                            </div>    
+                        </div>
+                    </pre>
+
+                )
+            }
+            ReactDOM.render(<WeaterR />, document.getElementById("root"));
+        </script>
+      </body>
+</html>   
+
